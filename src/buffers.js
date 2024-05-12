@@ -1,23 +1,25 @@
 export function initBuffers(gl) {
     let vertexBuffer = gl.createBuffer();
     gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer);
+    let y0 = 0.2;
+    let y1 = -0.2;
     let vertices = [ // x y
-        0.0,   0.0, // 0 
-        0.1,   0.0, // 1
-        0.2,   0.0, // 2
-        0.3,   0.0, // 3
-        0.4,   0.0, // 4
-        0.5,   0.0, // 5
-        0.6,   0.0, // 6
-        0.7,   0.0, // 7
-        0.0,  -0.2, // 8
-        0.1,  -0.2, // 9
-        0.2,  -0.2, // 10
-        0.3,  -0.2, // 11
-        0.4,  -0.2, // 12
-        0.5,  -0.2, // 13
-        0.6,  -0.2, // 14
-        0.7,  -0.2, // 15
+        0.0,   y0, // 0 
+        0.1,   y0, // 1
+        0.2,   y0, // 2
+        0.3,   y0, // 3
+        0.4,   y0, // 4
+        0.5,   y0, // 5
+        0.6,   y0, // 6
+        0.7,   y0, // 7
+        0.0,   y1, // 8
+        0.1,   y1, // 9
+        0.2,   y1, // 10
+        0.3,   y1, // 11
+        0.4,   y1, // 12
+        0.5,   y1, // 13
+        0.6,   y1, // 14
+        0.7,   y1, // 15
     ];
     gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertices), gl.STATIC_DRAW);
 

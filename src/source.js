@@ -85,7 +85,6 @@ async function main() {
 
         for (let i = 0; i < boneMatrices.length; i++) {
             mat4.mul(boneMatrices[i], bindMatricesInv[i], boneMatrices[i]);
-            //mat4.mul(boneMatrices[i],  boneMatrices[i], bindMatricesInv[i]);
         }
 
         // Render
