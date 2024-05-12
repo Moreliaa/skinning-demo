@@ -21,6 +21,28 @@ export function initBuffers(gl) {
     ];
     gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertices), gl.STATIC_DRAW);
 
+    let weights = [
+        1.0, 0.0, 0.0, 0.0, // 0
+        0.5, 0.5, 0.0, 0.0, // 1
+        0.0, 1.0, 0.0, 0.0, // 2
+        0.0, 0.5, 0.5, 0.0, // 3
+        0.0, 0.0, 1.0, 0.0, // 4
+        0.0, 0.0, 0.5, 0.5, // 5
+        0.0, 0.0, 0.0, 1.0, // 6
+        0.0, 0.0, 0.0, 0.5, // 7
+        1.0, 0.0, 0.0, 0.0, // 8
+        0.5, 0.5, 0.0, 0.0, // 9
+        0.0, 1.0, 0.0, 0.0, // 10
+        0.0, 0.5, 0.5, 0.0, // 11
+        0.0, 0.0, 1.0, 0.0, // 12
+        0.0, 0.0, 0.5, 0.5, // 13
+        0.0, 0.0, 0.0, 1.0, // 14
+        0.0, 0.0, 0.0, 0.5, // 15
+    ];
+    let weightBuffer = gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER, weightBuffer);
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(weights), gl.STATIC_DRAW);
+
     let elementArrayBuffer = [
         0,1,
         1,2,
@@ -52,5 +74,5 @@ export function initBuffers(gl) {
     gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, indexBuffer);
     gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, new Uint8Array(elementArrayBuffer), gl.STATIC_DRAW);
 
-    return { vertexBuffer, indexBuffer, len: elementArrayBuffer.length};
+    return { vertexBuffer, weightBuffer, indexBuffer, len: elementArrayBuffer.length};
 }
