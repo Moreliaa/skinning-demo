@@ -39,7 +39,7 @@ async function main() {
     }
 
     function computeBoneMatrices(bones, angle) {
-        let boneDistance = 0.1;
+        let boneDistance = 0.2;
 
         let m = mat4.create();
         mat4.rotate(bones[0], m, angle, [0,0,1]);
@@ -80,13 +80,12 @@ async function main() {
         let delta = now - then;
         then = now;
 
-        let angle = Math.sin(delta) * 0.8;
-        angle = 0;
-        //computeBoneMatrices(boneMatrices, angle);
+        let angle = Math.sin(now) * 0.2;
+        computeBoneMatrices(boneMatrices, angle);
 
         for (let i = 0; i < boneMatrices.length; i++) {
-            //mat4.mul(boneMatrices[i], bindMatrices[i], boneMatrices[i]); // order???
-            
+            mat4.mul(boneMatrices[i], bindMatricesInv[i], boneMatrices[i]);
+            //mat4.mul(boneMatrices[i],  boneMatrices[i], bindMatricesInv[i]);
         }
 
         // Render

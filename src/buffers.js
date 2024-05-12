@@ -50,7 +50,7 @@ export function initBuffers(gl) {
         3,4,
         4,5,
         5,6,
-        6,7,
+        //6,7,
         // second row
         8,9,
         9,10,
@@ -58,7 +58,7 @@ export function initBuffers(gl) {
         11,12,
         12,13,
         13,14,
-        14,15,
+        //14,15,
         //top-bottom connections
         0,8,
         1,9,
@@ -67,7 +67,7 @@ export function initBuffers(gl) {
         4,12,
         5,13,
         6,14,
-        7,15,
+        //7,15,
     ];
 
     let indexBuffer = gl.createBuffer();
